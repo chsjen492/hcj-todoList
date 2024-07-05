@@ -1,0 +1,37 @@
+header{
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
+
+body{
+    padding: 20%;
+}
+
+#todoInput{
+    font-size: 13px;
+    width: 230px;
+    height: 20px;
+    border-width: 0 0 1px;
+}
+
+button{
+    border-width: 0px;
+    border-radius: 8px;
+    height: 25px;
+    background-color: #e2e2e2;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

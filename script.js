@@ -1,9 +1,10 @@
-
-const input = document.getElementById('todo');
+const input = document.getElementById('todoInput');
 const add = document.getElementById('add');
-const list = document.getElementsByClassName('todo-list');
+const list = document.getElementById('todo-list');
 
 add.addEventListener('click', () => {
+    if (input.value.trim() === '') return;
+
     const listItem = document.createElement('li');
 
     const check = document.createElement('input');
@@ -16,19 +17,20 @@ add.addEventListener('click', () => {
         }
     });
 
-
     const content = document.createElement('span');
     content.textContent = input.value;
 
     const remove = document.createElement('button');
-    remove.textContent = '삭제'
+    remove.textContent = '삭제';
     remove.addEventListener('click', () => {
         list.removeChild(listItem);
-    })
-    list.innerHTML = add.value;
+    });
+
     listItem.appendChild(check);
     listItem.appendChild(content);
     listItem.appendChild(remove);
     list.appendChild(listItem);
-})
- 
+
+   input.value = ''; 
+});
+

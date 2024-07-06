@@ -1,36 +1,36 @@
-const input = document.getElementById('todoInput');
-const add = document.getElementById('add');
-const list = document.getElementById('todo-list');
+const todoInput = document.getElementById('todoInput');
+const addButton = document.getElementById('add');
+const todoList = document.getElementById('todo-list');
 
-add.addEventListener('click', () => {
-    if (input.value.trim() === '') return;
+addButton.addEventListener('click', () => {
+    if (todoInput.value.trim() === '') return;
 
     const listItem = document.createElement('li');
 
-    const check = document.createElement('input');
-    check.setAttribute('type', 'checkbox');
-    check.addEventListener('click', () => {
-        if (check.checked) {
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.addEventListener('click', () => {
+        if (checkbox.checked) {
             content.style.textDecoration = 'line-through';  
         } else {
             content.style.textDecoration = 'none'; 
         }
     });
 
-    const content = document.createElement('span');
-    content.textContent = input.value;
+    const todoContent = document.createElement('span');
+    todoContent.textContent = todoInput.value;
 
-    const remove = document.createElement('button');
-    remove.textContent = '삭제';
-    remove.addEventListener('click', () => {
-        list.removeChild(listItem);
+    const removeButton = document.createElement('button');
+    removeButton.textContent = '삭제';
+    removeButton.addEventListener('click', () => {
+        todoList.removeChild(listItem);
     });
 
-    listItem.appendChild(check);
-    listItem.appendChild(content);
-    listItem.appendChild(remove);
-    list.appendChild(listItem);
+    listItem.appendChild(checkbox);
+    listItem.appendChild(todoContent);
+    listItem.appendChild(removeButton);
+    todoList.appendChild(listItem);
 
-   input.value = ''; 
+   todoInput.value = ''; 
 });
 
